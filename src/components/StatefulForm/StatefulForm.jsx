@@ -40,7 +40,7 @@ const StatefulForm = () => {
                  type="email" name="email" id="" /> <br />
                 <input
                     onChange={handlePasswordChange}
-                 type="password" name="password" id="" /> <br />
+                 type="password" name="password" id="" required /> <br />
                 <input type="submit" value="submit" />
                 {
                     error && <p>{error}</p>
