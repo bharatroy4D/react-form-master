@@ -4,10 +4,18 @@ const StatefulForm = () => {
     const [name, setName] = useState([]);
     const [email, setEmail] = useState([null]);
     const [password, setPassword] = useState([]);
+    const [error, setError] = useState([]);
+
 
     const handleSubmit = e =>{
         e.preventDefault();
-        console.log(email, password,name); 
+        if(password.length<6){
+            setError('Must be 6 cheractar or longer')
+        }
+        else{
+            setError('');
+            console.log(email, password,name); 
+        }
 
     }
     const handleEmailChange = e =>{
@@ -34,6 +42,9 @@ const StatefulForm = () => {
                     onChange={handlePasswordChange}
                  type="password" name="password" id="" /> <br />
                 <input type="submit" value="submit" />
+                {
+                    error && <p>{error}</p>
+                }
             </form>
         </div>
     );
