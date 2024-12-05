@@ -1,6 +1,8 @@
 import { Children } from "react";
 
-const ReuseableForm = ({fromTitle, handleSubmit, submitButton ='Submit', Children}) => {
+const ReuseableForm = ({fromTitle, handleSubmit, submitButton ='Submit' 
+    
+}) => {
    const handleLocalSubmit = e =>{
         e.preventDefault();
         const data ={
@@ -11,8 +13,8 @@ const ReuseableForm = ({fromTitle, handleSubmit, submitButton ='Submit', Childre
         handleSubmit(data);
    }
     return (
-        <div>
-            {Children}
+        <div> 
+            <h2>{fromTitle}</h2>
             <form onSubmit={handleLocalSubmit}>
                 <input type="text" name="name" /> <br />
                 <input type="email" name="email" id="" /> <br />
